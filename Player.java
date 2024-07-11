@@ -2,21 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    private List<Card> Hand;
+    private List<Card> hand;
 
     public Player() {
-        this.Hand = new ArrayList<>();
+        this.hand = new ArrayList<>();
     }
 
     public void addCard(Card card) {
-        Hand.add(card);
+        hand.add(card);
     }
 
     public int calculateHandValue() {
         int value = 0;
         boolean hasAce = false;
 
-        for (Card card : Hand) {
+        for (Card card : hand) {
             value += card.getValue();
             if (card.getRank().equals("Ace")) {
                 hasAce = true;
@@ -32,7 +32,7 @@ public class Player {
     }
 
     public void displayHand() {
-        for (Card card : Hand) {
+        for (Card card : hand) {
             System.out.println(card.toString());
         }
         System.out.println("Total value: " + calculateHandValue());
